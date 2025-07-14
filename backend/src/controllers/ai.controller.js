@@ -5,7 +5,7 @@ import { streamClient, upsertStreamUser } from "../lib/stream.js";
  * @typedef {import('../agent/types.js').AIAgent} AIAgent
  */
 
-// Map to store the AI Agent instances, keyed by user ID (ai-bot-channelId)
+// Map to store AI Agent instances, keyed by user ID (ai-bot-channelId)
 /** @type {Map<string, AIAgent>} */
 const aiAgentCache = new Map();
 /** @type {Set<string>} */
