@@ -2,7 +2,7 @@ import { createAgent } from "../agent/createAgent.js";
 import { streamClient, upsertStreamUser } from "../lib/stream.js";
 
 /**
- * @typedef {import('../agents/types.js').AIAgent} AIAgent
+ * @typedef {import('../agent/types.js').AIAgent} AIAgent
  */
 
 // Map to store the AI Agent instances, keyed by user ID (ai-bot-channelId)
