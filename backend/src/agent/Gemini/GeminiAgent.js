@@ -1,6 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-export class GeminiAgent {
+export class geminiAgent {
 	/**
 	 * @param {any} chatClient - The chat client instance.
 	 * @param {any} channel - The chat channel instance.
@@ -13,13 +13,13 @@ export class GeminiAgent {
 	}
 
 	/**
-	 * Disposes of the GeminiAgent resources.
+	 * Disposes of the geminiAgent resources.
 	 * @returns {Promise<void>}
 	 */
 	dispose = async () => {
 		this.chatClient.off("message.new", this.handleMessage);
 		await this.chatClient.disconnectUser();
-		console.log("GeminiAgent disposed.");
+		console.log("geminiAgent disposed.");
 	};
 
 	/**
@@ -29,9 +29,9 @@ export class GeminiAgent {
 	getLastInteraction = () => this.lastInteractionTs;
 
 	/**
-	 * Initializes the GeminiAgent by setting up the API key.
+	 * Initializes the geminiAgent by setting up the API key.
 	 * @returns {Promise<void>}
-	 * @throws {Error} If the Gemini API key is not found.
+	 * @throws {Error} If the gemini API key is not found.
 	 */
 	init = async () => {
 		const apiKey = process.env.GEMINI_API_KEY;
@@ -42,7 +42,7 @@ export class GeminiAgent {
 
 		this.ai = new GoogleGenAI({ apiKey: apiKey });
 		this.chatClient.on("message.new", this.handleMessage);
-		console.log("GeminiAgent initialized. Listening for messages.");
+		console.log("geminiAgent initialized. Listening for messages.");
 	};
 
 	/**

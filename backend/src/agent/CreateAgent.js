@@ -27,7 +27,7 @@ export const createAgent = async (user_id, channel_type, channel_id) => {
 		role: "admin",
 	});
 
-	// Add the AI bot as a member to the channel using the admin client
+	// Add AI bot as a member to the channel using the admin client
 	const adminChannel = streamClient.channel(channel_type, channel_id);
 	try {
 		await adminChannel.addMembers([user_id]);
