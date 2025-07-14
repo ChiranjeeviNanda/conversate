@@ -1,5 +1,5 @@
 import { StreamChat } from "stream-chat";
-import { GeminiAgent } from "./Gemini/GeminiAgent.js";
+import { geminiAgent } from "./Gemini/geminiAgent.js";
 import {
 	streamClient,
 	generateStreamToken,
@@ -18,7 +18,7 @@ import {
  * @param {string} channel_id - The ID of the chat channel.
  * @returns {Promise<AIAgent>} A promise that resolves to the initialized Gemini AI agent.
  */
-export const CreateAgent = async (user_id, channel_type, channel_id) => {
+export const createAgent = async (user_id, channel_type, channel_id) => {
 	// Upsert the AI bot user in Stream Chat using the server-side client
 	await upsertStreamUser({
 		id: user_id,
@@ -49,10 +49,10 @@ export const CreateAgent = async (user_id, channel_type, channel_id) => {
 	await botChannel.watch();
 	console.log(`AI Bot watching channel ${channel_id}.`);
 
-	// Initialize the GeminiAgent with the bot's client and channel
-	const agent = new GeminiAgent(botClient, botChannel);
+	// Initialize the geminiAgent with the bot's client and channel
+	const agent = new geminiAgent(botClient, botChannel);
 	await agent.init();
-	console.log(`GeminiAgent initialized.`);
+	console.log(`geminiAgent initialized.`);
 
 	return agent;
 };
