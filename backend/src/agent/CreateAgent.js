@@ -18,7 +18,7 @@ import {
  * @param {string} channel_id - The ID of the chat channel.
  * @returns {Promise<AIAgent>} A promise that resolves to the initialized Gemini AI agent.
  */
-export const createAgent = async (user_id, channel_type, channel_id) => {
+export const CreateAgent = async (user_id, channel_type, channel_id) => {
 	// Upsert the AI bot user in Stream Chat using the server-side client
 	await upsertStreamUser({
 		id: user_id,

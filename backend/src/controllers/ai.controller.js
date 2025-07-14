@@ -1,4 +1,4 @@
-import { createAgent } from "../Agent/CreateAgent.js";
+import { CreateAgent } from "../Agent/CreateAgent.js";
 import { streamClient, upsertStreamUser } from "../lib/stream.js";
 
 /**
@@ -77,7 +77,7 @@ export const startAiAgent = async (req, res) => {
 				`AI Bot user upserted with name: ${botName} and image: ${botImage}`
 			);
 
-			const agent = await createAgent(
+			const agent = await CreateAgent(
 				user_id,
 				channel_type,
 				channel_id_updated
