@@ -61,7 +61,7 @@ const ThemeSelector = () => {
 
 				{/* Tooltip */}
 				{!isOpen && (
-					<div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-pre rounded-md bg-neutral px-3 py-1.5 text-sm font-semibold text-neutral-content shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+					<div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-pre rounded-md bg-neutral px-3 py-1.5 text-sm font-semibold text-neutral-content shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
 						Themes
 					</div>
 				)}
@@ -69,21 +69,20 @@ const ThemeSelector = () => {
 
 			{/* Dropdown Content */}
 			<div
-				className={`absolute top-16 left-1/2 -translate-x-1/2 transition-all duration-300 ease-out ${
+				className={`absolute top-16 left-1/2 transform -translate-x-1/2 transition-all duration-300 ease-out z-50 ${
 					isOpen
 						? "opacity-100 translate-y-0 pointer-events-auto"
 						: "opacity-0 -translate-y-2 pointer-events-none"
 				}`}
 			>
-				<div
-					className="w-64 max-h-80 overflow-y-auto rounded-2xl border border-base-content/30 shadow-2xl backdrop-blur-sm"
-				>
+				{/* Glassmorphism Background */}
+				<div className="w-64 max-h-80 overflow-y-auto rounded-2xl bg-base-200/90 border border-base-content/20 shadow-2xl">
 					{/* Theme Options */}
 					<div className="p-2 space-y-1">
 						{THEMES.map((themeOption) => (
 							<button
 								key={themeOption.name}
-								className={`w-full px-4 py-3 rounded-xl flex items-center gap-3 transition-all duration-200 group ${
+								className={`w-full px-4 py-3 rounded-xl flex items-center gap-3 transition-all duration-200 group relative ${
 									theme === themeOption.name
 										? "bg-primary/20 border border-primary/30 text-primary shadow-sm"
 										: "hover:bg-base-content/5 hover:scale-[1.02] border border-transparent"
@@ -93,24 +92,23 @@ const ThemeSelector = () => {
 								}
 							>
 								<div
-									className={`flex items-center justify-center size-8 rounded-lg bg-base-300/40 group-hover:border-base-content/20 transition-all duration-200 flex-shrink-0
-                  ${
-		                theme === themeOption.name
-			                ? "border-2 border-primary animate-pulse"
-			                : "border border-base-content/10"
-	                }`}
+									className={`flex items-center justify-center w-8 h-8 rounded-lg bg-base-300/40 transition-all duration-200 flex-shrink-0 ${
+										theme === themeOption.name
+											? "border-2 border-primary animate-pulse"
+											: "border border-base-content/10 group-hover:border-base-content/20"
+									}`}
 								>
 									<PaintbrushIcon className="size-4 text-base-content/70 group-hover:text-base-content transition-colors duration-200" />
 								</div>
 
-								<div className="flex-1 text-left">
-									<span className="text-sm font-medium text-base-content">
+								<div className="flex-1 text-left min-w-0">
+									<span className="text-sm font-medium text-base-content block truncate">
 										{themeOption.label}
 									</span>
 								</div>
 
 								{/* Theme Preview Colors */}
-								<div className="flex gap-1.5">
+								<div className="flex gap-1.5 flex-shrink-0">
 									{themeOption.colors.map((color, i) => (
 										<span
 											key={i}
@@ -119,8 +117,6 @@ const ThemeSelector = () => {
 										/>
 									))}
 								</div>
-
-								
 							</button>
 						))}
 					</div>

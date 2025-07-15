@@ -10,7 +10,7 @@ export default function Navbar() {
 	return (
 		<nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full px-4">
 			<div
-				className="flex items-center justify-between gap-4 px-6 py-3 backdrop-blur-xl rounded-2xl border border-base-content/30 shadow-xl"
+				className="flex items-center justify-between gap-4 px-6 py-3 rounded-2xl border border-base-content/30 shadow-xl"
 				style={{
 					backdropFilter: "blur(12px) saturate(180%)",
 					WebkitBackdropFilter: "blur(12px) saturate(180%)",

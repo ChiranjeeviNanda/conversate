@@ -23,19 +23,46 @@ const capitalize = (str) => {
 
 const LanguageBadge = ({ language, label, type }) => {
 	const [shouldScroll, setShouldScroll] = useState(false);
+	const [scrollAmount, setScrollAmount] = useState(0);
+	const [animationDuration, setAnimationDuration] = useState(3); // Base duration
 	const textRef = useRef(null);
 	const containerRef = useRef(null);
 
 	useEffect(() => {
 		if (textRef.current && containerRef.current) {
-			// Small delay to ensure elements are rendered
-			const timer = setTimeout(() => {
+			const checkScroll = () => {
 				const textWidth = textRef.current.scrollWidth;
 				const containerWidth = containerRef.current.clientWidth;
-				setShouldScroll(textWidth > containerWidth);
-			}, 100);
+				const needsScroll = textWidth > containerWidth;
 
-			return () => clearTimeout(timer);
+				setShouldScroll(needsScroll);
+
+				if (needsScroll) {
+					const amount = textWidth - containerWidth;
+					setScrollAmount(amount);
+
+					// Increase the base duration to make it scroll slower
+					// A higher multiplier will make it scroll even slower
+					const ratio = textWidth / containerWidth;
+					setAnimationDuration(Math.max(5, ratio * 3)); // Changed from 3 and 2 to 5 and 3
+				}
+			};
+
+			checkScroll();
+
+			const timer = setTimeout(checkScroll, 100);
+
+			const handleResize = () => checkScroll();
+			window.addEventListener("resize", handleResize);
+
+			if (document.fonts && document.fonts.ready) {
+				document.fonts.ready.then(checkScroll);
+			}
+
+			return () => {
+				clearTimeout(timer);
+				window.removeEventListener("resize", handleResize);
+			};
 		}
 	}, [language]);
 
@@ -58,35 +85,50 @@ const LanguageBadge = ({ language, label, type }) => {
 				</span>
 				<span
 					ref={containerRef}
-					className="text-sm font-bold max-w-14 overflow-hidden whitespace-nowrap"
+					className="text-sm font-bold max-w-14 overflow-hidden whitespace-nowrap relative"
 				>
 					<span
 						ref={textRef}
-						className={
-							shouldScroll ? "inline-block animate-scroll" : ""
-						}
+						className={shouldScroll ? "animate-scroll" : ""}
+						style={{
+							display: "inline-block",
+							"--scroll-duration": `${animationDuration}s`,
+							"--scroll-amount": `-${scrollAmount}px`,
+						}}
 					>
 						{capitalize(language)}
 					</span>
 				</span>
 			</div>
 			<style>{`
-				@keyframes scroll {
-					0% {
-						transform: translateX(0);
-					}
-					50% {
-						transform: translateX(calc(-100% + 3.5rem));
-					}
-					100% {
-						transform: translateX(0);
-					}
-				}
-				.animate-scroll {
-					animation: scroll 3s ease-in-out infinite;
-					animation-delay: 1s;
-				}
-			`}</style>
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    45% { /* Changed from 50% */
+                        transform: translateX(var(--scroll-amount));
+                    }
+                    55% { /* New keyframe for pause */
+                        transform: translateX(var(--scroll-amount));
+                    }
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+
+                .animate-scroll {
+                    /* Adjusted animation properties */
+                    animation: scroll var(--scroll-duration) ease-in-out 1s infinite; /* 1s delay before first scroll */
+                    animation-fill-mode: both;
+                    will-change: transform;
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .animate-scroll {
+                        animation: none !important;
+                    }
+                }
+            `}</style>
 		</div>
 	);
 };
