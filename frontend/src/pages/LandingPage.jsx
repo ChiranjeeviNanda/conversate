@@ -8,6 +8,8 @@ import {
 	VideoIcon,
 	BotMessageSquareIcon,
 	ChevronRightCircleIcon,
+	HandMetalIcon,
+	PlaneIcon,
 } from "lucide-react";
 import Logo from "../components/Logo";
 import FeatureCard from "../components/FeatureCard";
@@ -101,7 +103,7 @@ const LandingPage = () => {
 				<div className="flex justify-between items-center max-w-7xl mx-auto">
 					{/* Logo */}
 					<Logo
-						main={true}
+						size="size-10"
 						bgColor="bg-gradient-to-bl from-[#65a30d] via-[#16a34a] to-[#15803d]"
 						iconColor="text-primary-content"
 					/>
@@ -133,17 +135,17 @@ const LandingPage = () => {
 			<main className="flex-1 flex items-center justify-center py-12 sm:py-14 lg:py-16">
 				<div className="max-w-7xl mx-auto w-full space-y-24">
 					{/* Hero Section */}
-					<div className="flex flex-col sm:flex-row items-center justify-center sm:gap-10 lg:gap-20">
+					<div className="flex flex-col sm:flex-row items-center justify-center gap-2 lg:gap-20">
 						<img
 							src="./landing-image.svg"
 							alt="Conversate"
-							className=" size-80 sm:size-96"
+							className="size-80 sm:size-96"
 						/>
 						<AnimatedDiv
 							delay={700}
 							direction="right"
 							isLoading={pageLoading}
-							className="space-y-5 sm:space-y-6 mt-10 sm:mt-0 text-center sm:text-left"
+							className="space-y-5 sm:space-y-6 text-center sm:text-left"
 						>
 							<h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
 								Learning a Language?
@@ -158,8 +160,8 @@ const LandingPage = () => {
 								adventure!
 							</p>
 							<Link to="/signup">
-								<HoverButton className="bg-gradient-to-bl from-[#65a30d] via-[#16a34a] to-[#15803d] rounded-3xl p-8 text-white font-bold text-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 gap-2">
-									<ChevronRightCircleIcon className="size-6" />
+								<HoverButton className="bg-gradient-to-bl from-[#65a30d] via-[#16a34a] to-[#15803d] rounded-3xl p-8 text-white font-bold text-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:shadow-primary/50 gap-4">
+									<PlaneIcon className="size-6 rotate-45 group-hover:rotate-0 transition-all duration-300" />
 									Start Your Journey
 								</HoverButton>
 							</Link>
