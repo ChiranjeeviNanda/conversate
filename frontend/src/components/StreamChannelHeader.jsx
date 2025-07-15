@@ -25,10 +25,12 @@ const StreamChannelHeader = () => {
 	const handleVideoCall = () => {
 		if (channel) {
 			const callUrl = `${window.location.origin}/call/${channel.id}`;
+			const userName = client.user.name;
+
 			channel.sendMessage({
-				text: `📹 I've started a video call. Join me here: ${callUrl}`,
+				text: `📹 **${userName}** has started a video call!\n\n **Join the call:** ${callUrl}\n\n *Click the link above to join the video conversation*`,
 			});
-			toast.success("Video call link sent successfully!");
+			toast.success("Video call invitation sent!");
 		}
 	};
 
@@ -86,7 +88,7 @@ const StreamChannelHeader = () => {
 						<img
 							src={receiver?.image}
 							alt={receiver?.name}
-							className="size-8 sm:size-10 rounded-full border border-base-300 ring-2 ring-offset-2 ring-primary/20"
+							className="size-8 sm:size-10 rounded-full border border-base-300 ring-2 ring-offset-2 ring-primary/20 overflow-hidden"
 						/>
 						<div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1">
 							<Circle
@@ -118,32 +120,25 @@ const StreamChannelHeader = () => {
 			<div className="flex items-center gap-2 shrink-0">
 				<HoverButton
 					title="AI Assistant"
-					className="btn-neutral btn-sm text-neutral-content"
+					className="btn-neutral md:btn-sm text-neutral-content"
 					onClick={handleAIAssistant}
 				>
 					{aiInChannel ? (
-						<>
-							<BotOffIcon className="size-4 sm:size-5" />
-							<p className="hidden md:inline font-semibold pl-1">
-								Remove AI
-							</p>
-						</>
+						<BotOffIcon className=" size-6 sm:size-5" />
 					) : (
-						<>
-							<BotIcon className="size-4 sm:size-5" />
-							<p className="hidden md:inline font-semibold pl-1">
-								Add AI
-							</p>
-						</>
+						<BotIcon className="size-6 sm:size-5" />
 					)}
+					<p className="font-semibold pl-1 hidden md:inline">
+						{aiInChannel ? "Remove AI" : "Add AI"}
+					</p>
 				</HoverButton>
 
 				<HoverButton
 					title="Start Video Call"
-					className="btn-primary btn-sm text-primary-content"
+					className="btn-primary md:btn-sm text-primary-content"
 					onClick={handleVideoCall}
 				>
-					<VideoIcon className="size-4 sm:size-5" />
+					<VideoIcon className="size-6 sm:size-5" />
 					<p className="hidden md:inline font-semibold pl-1">
 						Video Call
 					</p>
