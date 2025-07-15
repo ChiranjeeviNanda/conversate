@@ -23,7 +23,7 @@ export const createAgent = async (user_id, channel_type, channel_id) => {
 	await upsertStreamUser({
 		id: user_id,
 		name: "AI Assistant",
-		image: "https://www.svgrepo.com/show/374555/bot.svg",
+		image: "https://www.svgrepo.com/show/142052/robot-outline-in-a-circle.svg",
 		role: "admin",
 	});
 
