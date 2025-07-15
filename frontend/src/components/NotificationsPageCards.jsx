@@ -130,7 +130,6 @@ export const NewConnectionCard = ({
 			duration={500}
 			direction="bottom"
 			isLoading={isLoading}
-			className={`${index >= 2 ? "hidden sm:block" : ""}`}
 		>
 			<GlassCard className="relative p-6 overflow-hidden border border-success/20 hover:border-success/40 transition-all duration-300">
 				<div className="absolute inset-0 bg-gradient-to-br from-success/10 via-transparent to-success/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

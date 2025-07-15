@@ -1,14 +1,8 @@
-const Logo = ({
-	main=false,
-	iconColor = "",
-	bgColor = "",
-	size = "",
-	className = "",
-}) => {
+const Logo = ({ iconColor = "", bgColor = "", size = "", className = "" }) => {
 	return (
 		<div className="flex items-center space-x-3 group cursor-pointer">
 			<div
-				className={`relative rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${main ? "size-12" : `${size}`} ${bgColor} ${className}`}
+				className={`relative rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 ${size} ${bgColor} ${className}`}
 			>
 				<svg
 					viewBox="0 0 16 16"
@@ -21,7 +15,7 @@ const Logo = ({
 			</div>
 
 			<div className="relative">
-				<p className={`${main ? "text-3xl sm:text-4xl" : "text-2xl sm:text-3xl"} font-bold text-base-content group-hover:text-primary transition-all duration-500`}>
+				<p className="text-2xl sm:text-3xl font-bold text-base-content group-hover:text-primary transition-all duration-500">
 					Conversate
 				</p>
 

@@ -29,7 +29,7 @@ export const NavigationButton = ({
 					`}
 				title={title}
 			>
-				<Icon className="text-base-content/70 group-hover:text-primary transition-colors duration-300 size-6" />
+				<Icon className="text-base-content/70 group-hover:text-primary transition-colors duration-300 size-6 sm:size-5" />
 				<span className="font-medium text-base-content/80 group-hover:text-primary transition-colors duration-300">
 					{children}
 				</span>
