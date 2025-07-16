@@ -34,6 +34,7 @@ const ChatPage = () => {
 	useEffect(() => {
 		const initChat = async () => {
 			if (!tokenData?.token || !authUser) return;
+
 			try {
 				console.log("Initializing stream chat client...");
 				const client = StreamChat.getInstance(STREAM_API_KEY);
@@ -45,10 +46,12 @@ const ChatPage = () => {
 					},
 					tokenData.token
 				);
+
 				const channelId = [authUser._id, targetUserId].sort().join("-");
 				const currChannel = client.channel("messaging", channelId, {
 					members: [authUser._id, targetUserId],
 				});
+
 				await currChannel.watch();
 				setChatClient(client);
 				setChannel(currChannel);
@@ -59,32 +62,31 @@ const ChatPage = () => {
 				setLoading(false);
 			}
 		};
+
 		initChat();
 	}, [tokenData, authUser, targetUserId]);
 
-	const isMessageAIGenerated = (message) => !!message.ai_generated;
+    const isMessageAIGenerated = (message) => !!message.ai_generated;
 
 	if (loading || !chatClient || !channel) return <ComponentLoader />;
 
 	return (
-		<div className="chat-page-container">
-			<Chat
-				client={chatClient}
-				theme="str-chat__theme-dark"
-				isMessageAIGenerated={isMessageAIGenerated}
-			>
+		<div className="flex flex-col h-dvh sm:p-4">
+			<Chat client={chatClient} theme="str-chat__theme-dark" isMessageAIGenerated={isMessageAIGenerated}>
 				<Channel channel={channel}>
-					<div className="chat-page-layout">
-						<div className="chat-page-header">
+					<div className="flex flex-col size-full">
+						<div className="sticky top-0 z-10 md:static">
 							<StreamChannelHeader />
 						</div>
-						<div className="chat-page-messages">
+
+						<div className="flex-1 overflow-y-auto">
 							<Window>
 								<MessageList disableThreading />
 								<AIStateIndicator />
 							</Window>
 						</div>
-						<div className="chat-page-input">
+
+						<div className="sticky bottom-0 z-10 md:static">
 							<MessageInput focus audioRecordingEnabled />
 						</div>
 					</div>
