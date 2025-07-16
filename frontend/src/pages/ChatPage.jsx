@@ -67,24 +67,24 @@ const ChatPage = () => {
 	if (loading || !chatClient || !channel) return <ComponentLoader />;
 
 	return (
-		<div className="flex flex-col mobile-safe-height sm:p-4">
+		<div className="chat-page-container">
 			<Chat
 				client={chatClient}
 				theme="str-chat__theme-dark"
 				isMessageAIGenerated={isMessageAIGenerated}
 			>
 				<Channel channel={channel}>
-					<div className="flex flex-col size-full">
-						<div className="sticky top-0 z-10 md:static safe-area-top">
+					<div className="chat-page-layout">
+						<div className="chat-page-header">
 							<StreamChannelHeader />
 						</div>
-						<div className="flex-1 overflow-y-auto">
+						<div className="chat-page-messages">
 							<Window>
 								<MessageList disableThreading />
 								<AIStateIndicator />
 							</Window>
 						</div>
-						<div className="sticky bottom-0 z-10 md:static safe-area-bottom">
+						<div className="chat-page-input">
 							<MessageInput focus audioRecordingEnabled />
 						</div>
 					</div>

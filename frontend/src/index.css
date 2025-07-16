@@ -1,16 +1,101 @@
-/* ==========================================================================
-   Stream Chat CSS with DaisyUI Integration
-   ========================================================================== */
-
-/* Base Imports and Configuration */
 @import "tailwindcss";
 @plugin "daisyui" {
 	themes: all;
 }
 
-/* Override DaisyUI success button styling */
 .btn-success {
 	background-image: none;
+}
+
+/* ==========================================================================
+   Chat Page Layout
+   ========================================================================== */
+
+.chat-page-container {
+  height: 100dvh;
+  height: 100vh;
+  
+  /* Handle safe areas (notches, navigation bars) */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  
+  /* Prevent scrolling on main container */
+  overflow: hidden;
+  
+  /* Desktop padding */
+  padding: 1rem;
+}
+
+/* Remove desktop padding on mobile */
+@media (max-width: 640px) {
+  .chat-page-container {
+    padding: 0;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Main layout using CSS Grid */
+.chat-page-layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sticky header */
+.chat-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-base-100);
+  border-bottom: 1px solid color-mix(in oklch, var(--color-base-content) 30%, transparent);
+}
+
+/* Scrollable messages area */
+.chat-page-messages {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+/* Sticky message input */
+.chat-page-input {
+  position: sticky;
+  bottom: 0;
+  z-index: 50;
+  background: var(--color-base-100);
+  border-top: 1px solid color-mix(in oklch, var(--color-base-content) 30%, transparent);
+}
+
+/* Ensure Stream Chat takes full height */
+.chat-page-container .str-chat,
+.chat-page-container .str-chat__channel,
+.chat-page-container .str-chat__main-panel {
+  height: 100%;
+}
+
+/* Override your existing container styles for the chat page */
+.chat-page-container .str-chat__container {
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .chat-page-header {
+    padding-top: max(env(safe-area-inset-top), 0px);
+  }
+  
+  .chat-page-input {
+    padding-bottom: max(env(safe-area-inset-bottom), 0px);
+  }
 }
 
 /* ==========================================================================
