@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import {
 	getOutgoingFriendReqs,
 	getRecommendedUsers,
@@ -20,6 +20,7 @@ import NotFoundCard from "../components/NotFoundCard";
 import { NavigationButton } from "../components/HoverButton";
 import AnimatedDiv from "../components/AnimatedDiv";
 import Pagination from "../components/Pagination";
+import useFriendsOrder from "../hooks/useFriendsOrder";
 
 const HomePage = () => {
 	const [outgoingReqIds, setOutgoingReqIds] = useState(new Set());
@@ -32,17 +33,22 @@ const HomePage = () => {
 		queryFn: getUserFriends,
 	});
 
-	const { data: recommendedUsers = [], isLoading: isUsersLoading } = useQuery(
-		{
+	const { data: rawRecommendedUsers = [], isLoading: isUsersLoading } =
+		useQuery({
 			queryKey: ["recommendedUsers"],
 			queryFn: getRecommendedUsers,
-		}
-	);
+		});
+
+	const recommendedUsers = useMemo(() => {
+		return [...rawRecommendedUsers].reverse();
+	}, [rawRecommendedUsers]);
 
 	const { data: outgoingFriendReqs } = useQuery({
 		queryKey: ["outgoingFriendReqs"],
 		queryFn: getOutgoingFriendReqs,
 	});
+
+	const { orderedFriends, handleFriendMessaged } = useFriendsOrder(friends);
 
 	useEffect(() => {
 		if (outgoingFriendReqs && outgoingFriendReqs.length > 0) {
@@ -59,7 +65,7 @@ const HomePage = () => {
 		return () => clearTimeout(timer);
 	}, []);
 
-	// Calculate pagination
+	// Calculate pagination on reversed recommendedUsers
 	const totalPages = Math.ceil(recommendedUsers.length / usersPerPage);
 	const startIndex = currentPage * usersPerPage;
 	const endIndex = startIndex + usersPerPage;
@@ -88,7 +94,8 @@ const HomePage = () => {
 						</h1>
 					</div>
 					<p className="text-xl text-base-content/70 max-w-3xl mx-auto">
-						Continue your language learning journey with friends and discover new conversation partners
+						Continue your language learning journey with friends and
+						discover new conversation partners
 					</p>
 				</AnimatedDiv>
 
@@ -155,13 +162,13 @@ const HomePage = () => {
 						/>
 					) : (
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-							{friends.slice(-4).map((friend, index) => (
+							{orderedFriends.slice(0, 4).map((friend) => (
 								<FriendCard
 									key={friend._id}
 									friend={friend}
-									index={index}
 									isLoading={pageLoading}
 									variant="compact"
+									onMessageClick={handleFriendMessaged}
 								/>
 							))}
 						</div>
@@ -184,8 +191,8 @@ const HomePage = () => {
 								Meet New Learners
 							</h2>
 							<p className="text-base-content/70 flex items-center gap-2">
-								Discover perfect language exchange partners based on
-								your profile
+								Discover perfect language exchange partners
+								based on your profile
 							</p>
 						</div>
 					</AnimatedDiv>

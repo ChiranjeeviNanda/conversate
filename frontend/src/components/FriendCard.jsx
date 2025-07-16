@@ -4,11 +4,22 @@ import GlassCard from "./GlassCard";
 import AnimatedDiv from "./AnimatedDiv";
 import LanguageBadge from "./LanguageBadge";
 
-const FriendCard = ({ friend, index, isLoading, variant = "default" }) => {
+const FriendCard = ({
+	friend,
+	isLoading,
+	variant = "default",
+	onMessageClick,
+}) => {
+	const handleMessageClick = () => {
+		if (onMessageClick) {
+			onMessageClick(friend._id);
+		}
+	};
+
 	if (variant === "compact") {
 		return (
 			<AnimatedDiv
-				delay={500 + index * 100}
+				delay={0}
 				duration={500}
 				direction="bottom"
 				isLoading={isLoading}
@@ -33,17 +44,16 @@ const FriendCard = ({ friend, index, isLoading, variant = "default" }) => {
 								/>
 							</div>
 						</div>
-
 						{/* Content */}
 						<div className="flex-1 min-w-0 flex flex-col gap-3">
 							{/* Name */}
 							<h3 className="font-bold text-lg text-base-content truncate">
 								{friend.fullName}
 							</h3>
-
 							{/* Action Button */}
 							<Link
 								to={`/chat/${friend._id}`}
+								onClick={handleMessageClick}
 								className="btn btn-primary text-base-100 w-full gap-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95"
 							>
 								<MessageSquareIcon className="size-4 text-base-100" />
@@ -59,7 +69,7 @@ const FriendCard = ({ friend, index, isLoading, variant = "default" }) => {
 	// Full variant
 	return (
 		<AnimatedDiv
-			delay={500 + index * 100}
+			delay={0}
 			duration={500}
 			direction="bottom"
 			isLoading={isLoading}
@@ -83,7 +93,6 @@ const FriendCard = ({ friend, index, isLoading, variant = "default" }) => {
 								/>
 							</div>
 						</div>
-
 						{/* Name */}
 						<div className="space-y-1">
 							<div className="flex-1 min-w-0">
@@ -99,7 +108,6 @@ const FriendCard = ({ friend, index, isLoading, variant = "default" }) => {
 							)}
 						</div>
 					</div>
-
 					{/* Language Badges */}
 					<div className="flex-1 mb-3">
 						<div className="flex flex-row gap-2">
@@ -115,11 +123,11 @@ const FriendCard = ({ friend, index, isLoading, variant = "default" }) => {
 							/>
 						</div>
 					</div>
-
 					{/* Action Button */}
 					<div className="pt-3 border-t border-base-content/10">
 						<Link
 							to={`/chat/${friend._id}`}
+							onClick={handleMessageClick}
 							className="btn btn-primary text-base-100 w-full gap-2 transition-all duration-200 ease-in-out hover:scale-105 active:scale-95"
 						>
 							<MessageSquareIcon className="size-4 text-base-100" />

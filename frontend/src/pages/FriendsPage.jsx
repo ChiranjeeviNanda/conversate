@@ -15,6 +15,7 @@ import NotFoundCard from "../components/NotFoundCard";
 import AnimatedDiv from "../components/AnimatedDiv";
 import GlassCard from "../components/GlassCard";
 import Pagination from "../components/Pagination";
+import useFriendsOrder from "../hooks/useFriendsOrder";
 
 const FriendsPage = () => {
 	const [pageLoading, setPageLoading] = useState(true);
@@ -27,8 +28,10 @@ const FriendsPage = () => {
 		queryFn: getUserFriends,
 	});
 
+	const { orderedFriends, handleFriendMessaged } = useFriendsOrder(friends);
+
 	// Filter friends based on search term
-	const filteredFriends = friends.filter(
+	const filteredFriends = orderedFriends.filter(
 		(friend) =>
 			friend.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
 			friend.nativeLanguage
@@ -254,13 +257,16 @@ const FriendsPage = () => {
 							<div className="space-y-8">
 								{/* Friends Grid */}
 								<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-									{currentFriends.map((friend, index) => (
+									{currentFriends.map((friend) => (
 										<FriendCard
 											key={friend._id}
 											friend={friend}
-											index={index}
+											// index={index} // You can remove this if not used for visual purposes related to initial loading animations
 											isLoading={pageLoading}
 											variant="default"
+											onMessageClick={
+												handleFriendMessaged
+											}
 										/>
 									))}
 								</div>
