@@ -66,26 +66,32 @@ const ChatPage = () => {
 		initChat();
 	}, [tokenData, authUser, targetUserId]);
 
+    const isMessageAIGenerated = (message) => !!message.ai_generated;
+
 	if (loading || !chatClient || !channel) return <ComponentLoader />;
 
 	return (
 		<div className="flex flex-col h-screen sm:p-4">
-			{/* Main chat container */}
-			<div className="flex-1 flex flex-col min-h-0 relative sm:min-h-0">
-				<Chat client={chatClient} theme="str-chat__theme-dark">
-					<Channel channel={channel}>
-						{/* Chat window */}
-						<div className="flex-1 flex flex-col min-h-0 h-full sm:min-h-0">
+			<Chat client={chatClient} theme="str-chat__theme-dark" isMessageAIGenerated={isMessageAIGenerated}>
+				<Channel channel={channel}>
+					<div className="flex flex-col size-full">
+						<div className="sticky top-0 z-10 md:static">
+							<StreamChannelHeader />
+						</div>
+
+						<div className="flex-1 overflow-y-auto">
 							<Window>
-								<StreamChannelHeader />
 								<MessageList disableThreading />
 								<AIStateIndicator />
-								<MessageInput focus audioRecordingEnabled />
 							</Window>
 						</div>
-					</Channel>
-				</Chat>
-			</div>
+
+						<div className="sticky bottom-0 z-10 md:static">
+							<MessageInput focus audioRecordingEnabled />
+						</div>
+					</div>
+				</Channel>
+			</Chat>
 		</div>
 	);
 };

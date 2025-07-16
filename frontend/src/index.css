@@ -296,6 +296,8 @@ stream-voice-recorder-wavebar .str-chat__recording-timer {
 	--str-chat__deleted-message-color: var(--color-neutral-content);
 	--str-chat__deleted-message-background-color: var(--color-neutral);
 	--str-chat__message-link-color: white;
+	--str-chat__message-reaction-background-color: var(--color-neutral);
+	--str-chat__own-message-reaction-background-color: var(--color-neutral);
 
 	/* Button and Input Colors */
 	--str-chat__message-send-color: var(--color-primary);
@@ -425,6 +427,7 @@ stream-voice-recorder-wavebar .str-chat__recording-timer {
 
 	/* Mobile message input padding */
 	.str-chat__message-input {
+		border-radius: 0;
 		padding: 0.5rem;
 	}
 

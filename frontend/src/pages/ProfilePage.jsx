@@ -109,7 +109,7 @@ const ProfilePage = () => {
 						{/* Name */}
 						<AnimatedDiv
 							delay={700}
-							direction="top"
+							direction="right"
 							isLoading={pageLoading}
 							className="md:col-span-5 md:row-span-2"
 						>
@@ -209,7 +209,7 @@ const ProfilePage = () => {
 						{/* Native Language */}
 						<AnimatedDiv
 							delay={900}
-							direction="left"
+							direction="right"
 							isLoading={pageLoading}
 							className="md:col-span-7 md:row-span-2"
 						>

@@ -108,9 +108,7 @@ const StreamChannelHeader = () => {
 							{receiver?.name}
 						</h2>
 						<p className="text-xs sm:text-sm text-base-content/70">
-							<span className="hidden sm:inline">
-								{receiver?.online ? "Online" : "Offline"}
-							</span>
+							{receiver?.online ? "Online" : "Offline"}
 						</p>
 					</div>
 				</div>

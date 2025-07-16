@@ -244,7 +244,7 @@ const CallContent = ({ callId }) => {
 					{/* Left side - Call info */}
 					<div className="flex items-center space-x-6">
 						<div className="flex items-center space-x-2">
-							<div className="size-2 bg-success rounded-full animate-pulse"></div>
+							<div className="size-3 bg-success rounded-full animate-pulse"></div>
 							<p className="font-medium">{timeElapsed}</p>
 						</div>
 						<div className="flex items-center space-x-1">
