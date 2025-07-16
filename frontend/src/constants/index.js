@@ -10,11 +10,6 @@ export const THEMES = [
 		colors: ["#ffffff", "#fdc700", "#ff8904", "#161616"],
 	},
 	{
-		name: "business",
-		label: "Business",
-		colors: ["#202020", "#1c4e80", "#7c909a", "#cdcdcd"],
-	},
-	{
 		name: "caramellatte",
 		label: "Caramellatte",
 		colors: ["#fff7ed", "#000000", "#370a00", "#7c2808"],
@@ -28,6 +23,11 @@ export const THEMES = [
 		name: "corporate",
 		label: "Corporate",
 		colors: ["#ffffff", "#0082ce", "#61738d", "#181a2a"],
+	},
+	{
+		name: "dark",
+		label: "Dark",
+		colors: ["#1d232a", "#605dff", "#f43098", "#ecf9ff"],
 	},
 	{
 		name: "dim",
@@ -95,9 +95,9 @@ export const THEMES = [
 		colors: ["#f7f5f3", "#1c1c29", "#1c1c29", "#4b4743"],
 	},
 	{
-		name: "winter",
-		label: "Winter",
-		colors: ["#ffffff", "#0069ff", "#463aa2", "#394e6a"],
+		name: "sunset",
+		label: "Sunset",
+		colors: ["#121c22", "#ff865b", "#fd6f9c", "#9fb9d0"],
 	},
 ];
 
