@@ -107,13 +107,12 @@ export const startAiAgent = async (req, res) => {
 			} else {
 				aiAgentCache.set(user_id, agent);
 
-				// Send welcome message from the bot
 				try {
 					// Use agent.channel.sendMessage directly, as agent.channel is the bot's channel instance
 					await agent.channel.sendMessage({
 						text: `Hello! I'm your AI Assistant. To get my attention, please start your message with \`@ai\` followed by your question.`,
-						user: { id: user_id, name: botName, image: botImage }, // Ensure message is from the bot
-						ai_generated: true, // Mark as AI-generated
+						user: { id: user_id, name: botName, image: botImage },
+						ai_generated: true,
 					});
 					console.log(
 						`AI Assistant welcome message sent to channel ${channel_id_updated}.`

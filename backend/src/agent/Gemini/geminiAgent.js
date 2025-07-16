@@ -188,7 +188,11 @@ export class geminiAgent {
 
 			if (responseText) {
 				await this.chatClient.partialUpdateMessage(channelMessage.id, {
-					set: { text: responseText, generating: false },
+					set: {
+						text: responseText,
+						generating: false,
+						ai_generated: true,
+					},
 				});
 			} else {
 				console.warn(
@@ -198,6 +202,7 @@ export class geminiAgent {
 					set: {
 						text: "Sorry, I couldn't generate a response.",
 						generating: false,
+						ai_generated: true,
 					},
 				});
 			}
@@ -223,6 +228,7 @@ export class geminiAgent {
 							set: {
 								text: errorMessageForUser,
 								generating: false,
+								ai_generated: true,
 							},
 						}
 					);
