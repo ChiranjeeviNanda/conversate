@@ -7,8 +7,6 @@ import {
 	MessagesSquareIcon,
 	VideoIcon,
 	BotMessageSquareIcon,
-	ChevronRightCircleIcon,
-	HandMetalIcon,
 	PlaneIcon,
 } from "lucide-react";
 import Logo from "../components/Logo";
@@ -33,7 +31,7 @@ const LandingPage = () => {
 			icon: MessagesSquareIcon,
 			title: "Conversations That Count",
 			description:
-				"Learn through meaningful conversations and rich cultural exchange",
+				"Learn through meaningful conversations and rich cultural exchange.",
 		},
 		{
 			icon: VideoIcon,
@@ -45,7 +43,7 @@ const LandingPage = () => {
 			icon: BotMessageSquareIcon,
 			title: "Smart AI, Instant Help",
 			description:
-				"Get real-time grammar fixes, vocabulary tips, and intelligent feedback—effortlessly",
+				"Get real-time grammar fixes, vocabulary tips, and intelligent feedback—effortlessly.",
 		},
 	];
 
