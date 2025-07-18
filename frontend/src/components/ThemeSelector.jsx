@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import useThemeStore from "../store/useThemeStore";
 import { PaintbrushIcon, PaintBucketIcon } from "lucide-react";
 import { THEMES } from "../constants";

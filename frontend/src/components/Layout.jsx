@@ -1,7 +1,5 @@
-import { useState } from "react";
 import Dock from "./Dock";
 import Navbar from "./Navbar";
-import ProfileCard from "./ProfileCard";
 
 const Layout = ({ children, showDock = true }) => {
 	return (

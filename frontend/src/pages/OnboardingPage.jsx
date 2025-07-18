@@ -6,10 +6,10 @@ import {
 	CameraIcon,
 } from "lucide-react";
 import { LANGUAGES } from "../constants";
-import HoverButton from "../components/HoverButton";
-import Logo from "../components/Logo";
 import useOnboarding from "../hooks/useOnboarding";
 import useAuthUser from "../hooks/useAuthUser";
+import HoverButton from "../components/HoverButton";
+import Logo from "../components/Logo";
 import AnimatedDiv from "../components/AnimatedDiv";
 import ProfileCard from "../components/ProfileCard";
 

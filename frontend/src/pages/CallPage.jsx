@@ -15,7 +15,6 @@ import {
 } from "@stream-io/video-react-sdk";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import toast from "react-hot-toast";
-import PageLoader from "../components/Loaders";
 import {
 	AlertCircleIcon,
 	MaximizeIcon,
@@ -23,6 +22,7 @@ import {
 	Share2Icon,
 	Users2Icon,
 } from "lucide-react";
+import PageLoader from "../components/PageLoader";
 import GlassCard from "../components/GlassCard";
 import HoverButton from "../components/HoverButton";
 

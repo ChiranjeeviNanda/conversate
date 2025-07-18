@@ -10,7 +10,7 @@ import {
 	SearchXIcon,
 } from "lucide-react";
 import FriendCard from "../components/FriendCard";
-import { ComponentLoader } from "../components/Loaders";
+import ComponentLoader from "../components/ComponentLoader";
 import NotFoundCard from "../components/NotFoundCard";
 import AnimatedDiv from "../components/AnimatedDiv";
 import GlassCard from "../components/GlassCard";

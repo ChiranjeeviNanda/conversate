@@ -5,7 +5,6 @@ import {
 	getFriendRequests,
 	rejectFriendRequest,
 } from "../lib/api";
-import { ComponentLoader } from "../components/Loaders";
 import {
 	BadgePlusIcon,
 	BellRingIcon,
@@ -13,10 +12,9 @@ import {
 	UserPlus2Icon,
 } from "lucide-react";
 import NotFoundCard from "../components/NotFoundCard";
-import {
-	FriendRequestCard,
-	NewConnectionCard,
-} from "../components/NotificationsPageCards";
+import FriendRequestCard from "../components/FriendRequestCard";
+import NewConnectionCard from "../components/NewConnectionCard";
+import ComponentLoader from "../components/ComponentLoader";
 import AnimatedDiv from "../components/AnimatedDiv";
 import Pagination from "../components/Pagination";
 

@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import Logo from "../components/Logo";
 import { Link } from "react-router";
 import {
 	KeyRoundIcon,
@@ -9,8 +8,9 @@ import {
 	CircleAlertIcon,
 	UserRoundPlusIcon,
 } from "lucide-react";
-import HoverButton from "../components/HoverButton";
 import useSignUp from "../hooks/useSignUp";
+import Logo from "../components/Logo";
+import HoverButton from "../components/HoverButton";
 import AnimatedDiv from "../components/AnimatedDiv";
 
 const SignUpPage = () => {

@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
+import { LANGUAGES } from "../constants";
+import { toast } from "react-hot-toast";
 import {
 	User2Icon,
 	ShuffleIcon,
 	CameraIcon,
 	UserRoundPenIcon,
 } from "lucide-react";
-import { toast } from "react-hot-toast";
-import AnimatedDiv from "../components/AnimatedDiv";
 import useUpdateProfile from "../hooks/useUpdateProfile";
 import useAuthUser from "../hooks/useAuthUser";
-import { LANGUAGES } from "../constants";
+import AnimatedDiv from "../components/AnimatedDiv";
 import HoverButton from "../components/HoverButton";
 import ProfileCard from "../components/ProfileCard";
 

@@ -14,10 +14,10 @@ import {
 	HeartHandshakeIcon,
 } from "lucide-react";
 import FriendCard from "../components/FriendCard";
-import { ComponentLoader } from "../components/Loaders";
+import ComponentLoader from "../components/ComponentLoader";
 import RecommendedUserCard from "../components/RecommendedUserCard";
 import NotFoundCard from "../components/NotFoundCard";
-import { NavigationButton } from "../components/HoverButton";
+import NavigationButton from "../components/NavigationButton";
 import AnimatedDiv from "../components/AnimatedDiv";
 import Pagination from "../components/Pagination";
 import useFriendsOrder from "../hooks/useFriendsOrder";

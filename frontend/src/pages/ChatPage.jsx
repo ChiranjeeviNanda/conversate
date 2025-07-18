@@ -13,7 +13,7 @@ import {
 } from "stream-chat-react";
 import { StreamChat } from "stream-chat";
 import toast from "react-hot-toast";
-import ComponentLoader from "../components/Loaders";
+import ComponentLoader from "../components/ComponentLoader";
 import StreamChannelHeader from "../components/StreamChannelHeader";
 
 const STREAM_API_KEY = import.meta.env.VITE_STREAM_API_KEY;

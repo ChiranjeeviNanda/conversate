@@ -1,30 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { LANGUAGE_TO_FLAG } from "../constants";
-
-const getLanguageFlag = (language) => {
-	if (!language) return null;
-	const countryCode = LANGUAGE_TO_FLAG[language.toLowerCase()];
-	if (countryCode) {
-		return (
-			<img
-				src={`https://flagcdn.com/24x18/${countryCode}.png`}
-				alt={`${language} flag`}
-				className="flex items-center h-4 m-1"
-			/>
-		);
-	}
-	return null;
-};
-
-const capitalize = (str) => {
-	if (!str) return "";
-	return str.charAt(0).toUpperCase() + str.slice(1);
-};
+import { capitalize, getLanguageFlag } from "../lib/utils";
 
 const LanguageBadge = ({ language, label, type }) => {
 	const [shouldScroll, setShouldScroll] = useState(false);
 	const [scrollAmount, setScrollAmount] = useState(0);
-	const [animationDuration, setAnimationDuration] = useState(3); // Base duration
+	const [animationDuration, setAnimationDuration] = useState(3);
 	const textRef = useRef(null);
 	const containerRef = useRef(null);
 
@@ -41,10 +21,8 @@ const LanguageBadge = ({ language, label, type }) => {
 					const amount = textWidth - containerWidth;
 					setScrollAmount(amount);
 
-					// Increase the base duration to make it scroll slower
-					// A higher multiplier will make it scroll even slower
 					const ratio = textWidth / containerWidth;
-					setAnimationDuration(Math.max(5, ratio * 3)); // Changed from 3 and 2 to 5 and 3
+					setAnimationDuration(Math.max(5, ratio * 3));
 				}
 			};
 
