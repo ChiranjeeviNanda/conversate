@@ -7,14 +7,15 @@ import LandingPage from "./pages/LandingPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import SignUpPage from "./pages/SignUpPage.jsx";
 import LogInPage from "./pages/LogInPage.jsx";
+import FriendsPage from "./pages/FriendsPage.jsx";
 import NotificationsPage from "./pages/NotificationsPage.jsx";
+import ProfilePage from "./pages/ProfilePage.jsx";
 import CallPage from "./pages/CallPage.jsx";
 import ChatPage from "./pages/ChatPage.jsx";
 import OnboardingPage from "./pages/OnboardingPage.jsx";
-import PageLoader from "./components/Loaders.jsx";
+
+import PageLoader from "./components/PageLoader.jsx";
 import Layout from "./components/Layout.jsx";
-import FriendsPage from "./pages/FriendsPage.jsx";
-import ProfilePage from "./pages/ProfilePage.jsx";
 
 const App = () => {
 	const { isLoading, authUser } = useAuthUser();
