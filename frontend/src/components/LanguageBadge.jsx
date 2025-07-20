@@ -1,5 +1,21 @@
 import { useEffect, useRef, useState } from "react";
-import { capitalize, getLanguageFlag } from "../lib/utils";
+import capitalize from "../lib/utils";
+import { LANGUAGE_TO_FLAG } from "../constants";
+
+const getLanguageFlag = (language) => {
+	if (!language) return null;
+	const countryCode = LANGUAGE_TO_FLAG[language.toLowerCase()];
+	if (countryCode) {
+		return (
+			<img
+				src={`https://flagcdn.com/24x18/${countryCode}.png`}
+				alt={`${language} flag`}
+				className="flex items-center h-4 m-1"
+			/>
+		);
+	}
+	return null;
+};
 
 const LanguageBadge = ({ language, label, type }) => {
 	const [shouldScroll, setShouldScroll] = useState(false);

@@ -6,7 +6,8 @@ import {
 	BotOffIcon,
 	BotIcon,
 } from "lucide-react";
-import HoverButton, { NavigationButton } from "./HoverButton";
+import HoverButton from "./HoverButton";
+import NavigationButton from "./NavigationButton";
 import toast from "react-hot-toast";
 import { useWatchers } from "../hooks/useWatchers";
 import { axiosInstance } from "../lib/axios";

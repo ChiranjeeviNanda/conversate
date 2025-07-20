@@ -12,6 +12,8 @@ const FriendRequestCard = ({
 	onAccept,
 	onReject,
 }) => {
+	if (!request?.sender) return null;
+
 	const isAcceptProcessing = processingAccepts.has(request._id);
 	const isRejectProcessing = processingRejects.has(request._id);
 	const isAnyProcessing = isAcceptProcessing || isRejectProcessing;
