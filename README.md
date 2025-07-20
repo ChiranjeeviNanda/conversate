@@ -266,28 +266,127 @@ GET  /api/users/outgoing-friend-requests # Get outgoing friend requests
 <details>
 <summary>🖥️ Desktop Experience</summary>
 
-### Home Page
-<img width="1919" alt="Home Page" src="https://github.com/user-attachments/assets/1a06829d-1591-42dc-8191-7c7735641dfe" />
+### 🏠 Landing Page
+*Clean, professional landing page with clear call-to-action*
+<img width="2880" height="2160" alt="Conversate Landing Page" src="https://github.com/user-attachments/assets/5229f47d-081b-40b0-9def-86e46dcfb0b1" />
 
-### Chat Interface
-*Real-time messaging with intuitive design*
+### 👥 Making Friends & Language Partner Discovery
+*Smart matching system to find language exchange partners*
+<div align="center">
+  <img width="49%" alt="Language Partner Discovery" src="https://github.com/user-attachments/assets/2a3f60ca-2f2a-4a4a-9c84-5ccf5c05c994" />
+  <img width="49%" alt="Friend Connection Interface" src="https://github.com/user-attachments/assets/a0ee7c4a-ed5e-4b49-8ec3-7e5e18d35660" />
+</div>
 
-### Video Call
-*High-quality video conversations*
+### 💬 Real-Time Chat Interface
+*Stream-powered messaging with modern UI design*
+<img width="2880" height="2160" alt="Chat Interface with Real-time Messaging" src="https://github.com/user-attachments/assets/234d13cd-16cb-428c-b720-89dafe1cc76a" />
 
-### AI Assistant
-*Intelligent language learning support*
+### 🎥 High-Quality Video Calls
+*Crystal clear video conversations for immersive language practice*
+<img width="2880" height="2160" alt="HD Video Call Interface" src="https://github.com/user-attachments/assets/0947c923-6da9-446b-b827-64f47acab080" />
 
 </details>
 
 <details>
 <summary>📱 Mobile Experience</summary>
 
-### Responsive Design
-*Fully optimized for mobile devices*
+### 📱 Fully Responsive Design
+*Optimized for mobile devices with touch-friendly interfaces*
 
-### Touch-Friendly Interface
-*Smooth mobile interactions*
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/d22fa5e9-c15c-4c6d-a923-46f22a8ab91d" width="200" alt="Mobile Landing" />
+        <br />
+        <sub><b>Landing Page</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/da5670c4-a00b-475d-80c1-df3d799f91c2" width="200" alt="Mobile Login" />
+        <br />
+        <sub><b>Login Interface</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/6544e211-483e-4166-bc0d-cde905f18e69" width="200" alt="Mobile Friends" />
+        <br />
+        <sub><b>Friend Discovery</b></sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/c371f270-0c5a-415d-97c1-99ce9fffb8a5" width="200" alt="Mobile Chat" />
+        <br />
+        <sub><b>Chat Interface</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/a342cb77-2f1c-46d5-9c9c-c1a331e33153" width="200" alt="Mobile Video" />
+        <br />
+        <sub><b>Video Calling</b></sub>
+      </td>
+      <td align="center">
+        <img src="https://github.com/user-attachments/assets/4542914c-5888-48c2-b5fc-42d35da9ffd7" width="200" alt="Mobile Profile" />
+        <br />
+        <sub><b>User Profile</b></sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+> 📱 **Testing Viewport**: All mobile screenshots captured using Samsung Galaxy S20 Ultra viewport for optimal display quality
+
+### ✨ Key Mobile Features
+- **Responsive Layout**: Adapts seamlessly to different screen sizes
+- **Touch Gestures**: Intuitive swipe and tap interactions
+- **Mobile-First Design**: Optimized user experience on smaller screens
+- **Fast Loading**: Efficient rendering for mobile networks
+
+</details>
+
+<details>
+<summary>🎨 Theme Showcase</summary>
+
+### 🍂 Seasonal & Custom Themes
+*Choose from 20 beautiful themes to personalize your experience*
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img width="400" alt="Autumn Theme" src="https://github.com/user-attachments/assets/81891309-cd1d-4afb-a772-05730f8fa189" />
+        <br />
+        <sub><b>🍂 Autumn Theme</b></sub>
+      </td>
+      <td align="center">
+        <img width="400" alt="Halloween Theme" src="https://github.com/user-attachments/assets/6978329d-e335-45aa-86e5-c33edb3d7ca9" />
+        <br />
+        <sub><b>🎃 Halloween Theme</b></sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img width="400" alt="Lemonade Theme" src="https://github.com/user-attachments/assets/291f040a-918d-4429-8e79-64d0f975b185" />
+        <br />
+        <sub><b>🍋 Lemonade Theme</b></sub>
+      </td>
+      <td align="center">
+        <div style="padding: 50px; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; color: white;">
+          <h3>🌈 And 17 More!</h3>
+          <p>Bumblebe • Caramellatte • Coffee</br>Corporate • Dark • Dim</br>Dracula • Emerald • Fantasy</br>Forest • Light • Lofi<br/>Neonite • Night • Nord<br/>Silk • Sunset</p>
+        </div>
+        <br />
+        <sub><b>🎨 Complete Theme Collection</b></sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+### 🎭 Theme Features
+- **🎨 Custom Color Schemes**: Professionally designed palettes
+- **🔄 Real-time Switching**: Instant theme changes without refresh
+- **💾 Persistent Settings**: Your theme choice is remembered
+- **📱 Mobile Optimized**: All themes work perfectly on mobile
+
+> 🎨 **Pro Tip**: Themes are powered by DaisyUI and provide consistent styling across all components while maintaining accessibility standards.
 
 </details>
 
@@ -405,10 +504,3 @@ Special thanks to [burakorkmez/streamify-video-calls](https://github.com/burakor
 **Email:** chiranjeevinanda23@gmail.com  
 **GitHub:** [@ChiranjeeviNanda](https://github.com/ChiranjeeviNanda)  
 **LinkedIn:** [Chiranjeevi Nanda Kumar](https://www.linkedin.com/in/chiranjeevi-nanda-kumar/)
-
----
-
-<div align="center">
-  <p>Made with ❤️ for language learners worldwide</p>
-  <p>⭐ Star this repository if you found it helpful!</p>
-</div>
