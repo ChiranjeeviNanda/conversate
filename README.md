@@ -56,7 +56,7 @@
 - **Responsive Design**: Seamless experience across all devices
 - **Smooth Animations**: Enhanced with Framer Motion for fluid interactions
 - **Modern UI**: Clean, intuitive interface built with DaisyUI
-- **Dark/Light Mode**: Customizable themes for comfortable usage
+- **20 Unique Themes**: Customizable themes for comfortable usage
 
 ---
 
