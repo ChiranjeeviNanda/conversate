@@ -216,11 +216,11 @@ conversate/
 
 ```bash
 # Root level
-npm run build        # Install dependencies and build frontend
-npm start           # Start production server
+npm run build      # Install dependencies and build frontend
+npm start          # Start production server
 
 # Backend (cd backend)
-npm run dev         # Start backend in development mode
+npm run dev        # Start backend in development mode
 npm start          # Start backend in production mode
 
 # Frontend (cd frontend)
