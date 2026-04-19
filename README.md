@@ -15,11 +15,11 @@
 
 ---
 
-## 🌟 Overview
+## Overview
 
 **Conversate** is a comprehensive language exchange platform built with the MERN stack, designed to connect language learners worldwide. Whether you're looking to practice conversation skills, learn from native speakers, or get AI-powered language assistance, Conversate provides the tools you need for effective language learning.
 
-### 🎯 Key Highlights
+### Key Highlights
 
 - **Global Community**: Connect with language partners from around the world
 - **Real-Time Communication**: Seamless messaging and video calling experience
@@ -29,30 +29,30 @@
 
 ---
 
-## ✨ Features
+## Features
 
-### 🌐 **Language Exchange**
+### **Language Exchange**
 - **Smart Matching**: Connect with native speakers of your target language
 - **Profile System**: Showcase your languages and learning goals
 - **Global Reach**: Practice with users from different countries and cultures
 
-### 💬 **Real-Time Communication**
+### **Real-Time Communication**
 - **Instant Messaging**: Powered by Stream Chat SDK for reliable messaging
 - **Video Calls**: High-quality 1:1 video conversations using Stream Video SDK
 - **File Sharing**: Share images, documents, and learning materials
 - **Message History**: Access previous conversations and track your progress
 
-### 🤖 **AI Assistant**
+### **AI Assistant**
 - **Gemini Integration**: Get instant help with translations and grammar
 - **Conversation Analysis**: Receive feedback on your language usage
 - **Learning Suggestions**: Personalized recommendations for improvement
 
-### 🔐 **Security & Authentication**
+### **Security & Authentication**
 - **JWT-Based Auth**: Secure user authentication and session management
 - **Email Verification**: Verified user accounts for trusted interactions
 - **Privacy Controls**: Manage your visibility and communication preferences
 
-### 🎨 **User Experience**
+### **User Experience**
 - **Responsive Design**: Seamless experience across all devices
 - **Smooth Animations**: Enhanced with Framer Motion for fluid interactions
 - **Modern UI**: Clean, intuitive interface built with DaisyUI
@@ -60,7 +60,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### **Frontend**
 - ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB) **React 19** - Modern UI library
@@ -91,7 +91,7 @@
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -137,7 +137,7 @@ You'll need accounts and API keys for:
    ```env
    VITE_STREAM_API_KEY=your_stream_api_key
    ```
-   > ⚠️ **Important**: All Vite environment variables must be prefixed with `VITE_` to be accessible in the frontend.
+   >  **Important**: All Vite environment variables must be prefixed with `VITE_` to be accessible in the frontend.
 
 ### Running the Application
 
@@ -167,7 +167,7 @@ The application will be available at `http://localhost:5000`
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 conversate/
@@ -199,7 +199,7 @@ conversate/
 
 ---
 
-## 🎯 Usage Guide
+## Usage Guide
 
 ### Getting Started as a User
 
@@ -261,36 +261,36 @@ GET  /api/users/outgoing-friend-requests # Get outgoing friend requests
 
 ---
 
-## 🖼️ Screenshots
+## Screenshots
 
 <details>
-<summary>🖥️ Desktop Experience</summary>
+<summary>Desktop Experience</summary>
 
-### 🏠 Landing Page
+### Landing Page
 *Clean, professional landing page with clear call-to-action*
 <img width="2880" height="2160" alt="Conversate Landing Page" src="https://github.com/user-attachments/assets/5229f47d-081b-40b0-9def-86e46dcfb0b1" />
 
-### 👥 Making Friends & Language Partner Discovery
+### Making Friends & Language Partner Discovery
 *Smart matching system to find language exchange partners*
 <div align="center">
   <img width="49%" alt="Language Partner Discovery" src="https://github.com/user-attachments/assets/2a3f60ca-2f2a-4a4a-9c84-5ccf5c05c994" />
   <img width="49%" alt="Friend Connection Interface" src="https://github.com/user-attachments/assets/a0ee7c4a-ed5e-4b49-8ec3-7e5e18d35660" />
 </div>
 
-### 💬 Real-Time Chat Interface
+### Real-Time Chat Interface
 *Stream-powered messaging with modern UI design*
 <img width="2880" height="2160" alt="Chat Interface with Real-time Messaging" src="https://github.com/user-attachments/assets/234d13cd-16cb-428c-b720-89dafe1cc76a" />
 
-### 🎥 High-Quality Video Calls
+### High-Quality Video Calls
 *Crystal clear video conversations for immersive language practice*
 <img width="2880" height="2160" alt="HD Video Call Interface" src="https://github.com/user-attachments/assets/0947c923-6da9-446b-b827-64f47acab080" />
 
 </details>
 
 <details>
-<summary>📱 Mobile Experience</summary>
+<summary>Mobile Experience</summary>
 
-### 📱 Fully Responsive Design
+### Fully Responsive Design
 *Optimized for mobile devices with touch-friendly interfaces*
 
 <div align="center">
@@ -332,9 +332,9 @@ GET  /api/users/outgoing-friend-requests # Get outgoing friend requests
   </table>
 </div>
 
-> 📱 **Testing Viewport**: All mobile screenshots captured using Samsung Galaxy S20 Ultra viewport for optimal display quality
+> **Testing Viewport**: All mobile screenshots captured using Samsung Galaxy S20 Ultra viewport for optimal display quality
 
-### ✨ Key Mobile Features
+### Key Mobile Features
 - **Responsive Layout**: Adapts seamlessly to different screen sizes
 - **Touch Gestures**: Intuitive swipe and tap interactions
 - **Mobile-First Design**: Optimized user experience on smaller screens
@@ -343,9 +343,9 @@ GET  /api/users/outgoing-friend-requests # Get outgoing friend requests
 </details>
 
 <details>
-<summary>🎨 Theme Showcase</summary>
+<summary>Theme Showcase</summary>
 
-### 🍂 Seasonal & Custom Themes
+### Seasonal & Custom Themes
 *Choose from 20 beautiful themes to personalize your experience*
 
 <div align="center">
@@ -370,7 +370,7 @@ GET  /api/users/outgoing-friend-requests # Get outgoing friend requests
       </td>
       <td align="center">
         <div style="padding: 50px; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; color: white;">
-          <h3>🌈 And 17 More!</h3>
+          <h3>And 17 More!</h3>
           <p>Bumblebe • Caramellatte • Coffee</br>Corporate • Dark • Dim</br>Dracula • Emerald • Fantasy</br>Forest • Light • Lofi<br/>Neonite • Night • Nord<br/>Silk • Sunset</p>
         </div>
         <br />
@@ -380,19 +380,19 @@ GET  /api/users/outgoing-friend-requests # Get outgoing friend requests
   </table>
 </div>
 
-### 🎭 Theme Features
-- **🎨 Custom Color Schemes**: Professionally designed palettes
-- **🔄 Real-time Switching**: Instant theme changes without refresh
-- **💾 Persistent Settings**: Your theme choice is remembered
-- **📱 Mobile Optimized**: All themes work perfectly on mobile
+### Theme Features
+- **Custom Color Schemes**: Professionally designed palettes
+- **Real-time Switching**: Instant theme changes without refresh
+- **Persistent Settings**: Your theme choice is remembered
+- **Mobile Optimized**: All themes work perfectly on mobile
 
-> 🎨 **Pro Tip**: Themes are powered by DaisyUI and provide consistent styling across all components while maintaining accessibility standards.
+> **Pro Tip**: Themes are powered by DaisyUI and provide consistent styling across all components while maintaining accessibility standards.
 
 </details>
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions from the community are welcomed! Here's how you can help:
 
@@ -412,15 +412,15 @@ Contributions from the community are welcomed! Here's how you can help:
 - Ensure all tests pass before submitting
 
 ### Ways to Contribute
-- 🐛 Report bugs and issues
-- 💡 Suggest new features
-- 📝 Improve documentation
-- 🔧 Fix existing issues
-- 🎨 Enhance UI/UX
+- Report bugs and issues
+- Suggest new features
+- Improve documentation
+- Fix existing issues
+- Enhance UI/UX
 
 ---
 
-## 📋 Roadmap
+## Roadmap
 
 ### Upcoming Features
 - [ ] **Group Conversations** - Multi-user chat rooms
@@ -439,7 +439,7 @@ Contributions from the community are welcomed! Here's how you can help:
 
 ---
 
-## 🐛 Known Issues
+## Known Issues
 
 - Video call quality may vary based on internet connection
 - AI responses may occasionally be delayed during high traffic
@@ -447,7 +447,7 @@ Contributions from the community are welcomed! Here's how you can help:
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -472,13 +472,13 @@ If you encounter issues:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🌐 Live Demo
+## Live Demo
 
 **Try Conversate now:** [https://conversate-fi27.onrender.com](https://conversate-fi27.onrender.com)
 
@@ -486,7 +486,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Stream** - For providing excellent real-time communication infrastructure
 - **Google** - For the powerful Gemini AI API
@@ -498,7 +498,7 @@ Special thanks to [burakorkmez/streamify-video-calls](https://github.com/burakor
 
 ---
 
-## 📞 Contact
+## Contact
 
 **Developer:** Chiranjevi Nanda Kumar  
 **Email:** chiranjeevinanda23@gmail.com  
