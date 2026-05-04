@@ -15,6 +15,14 @@
 
 ---
 
+## Live Demo
+
+**Try Conversate now:** [https://conversate-fi27.onrender.com](https://conversate-fi27.onrender.com)
+
+*Note: The live demo may take a moment to load as it's hosted on Render's free tier.*
+
+---
+
 ## Overview
 
 **Conversate** is a comprehensive language exchange platform built with the MERN stack, designed to connect language learners worldwide. Whether you're looking to practice conversation skills, learn from native speakers, or get AI-powered language assistance, Conversate provides the tools you need for effective language learning.
@@ -478,14 +486,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## Live Demo
-
-**Try Conversate now:** [https://conversate-fi27.onrender.com](https://conversate-fi27.onrender.com)
-
-*Note: The live demo may take a moment to load as it's hosted on Render's free tier.*
-
----
-
 ## Acknowledgments
 
 - **Stream** - For providing excellent real-time communication infrastructure
@@ -495,12 +495,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Open Source Community** - For the amazing tools and libraries
 
 Special thanks to [burakorkmez/streamify-video-calls](https://github.com/burakorkmez/streamify-video-calls) for backend architecture inspiration.
-
----
-
-## Contact
-
-**Developer:** Chiranjevi Nanda Kumar  
-**Email:** chiranjeevinanda23@gmail.com  
-**GitHub:** [@ChiranjeeviNanda](https://github.com/ChiranjeeviNanda)  
-**LinkedIn:** [Chiranjeevi Nanda Kumar](https://www.linkedin.com/in/chiranjeevi-nanda-kumar/)
