@@ -22,8 +22,8 @@ const NewConnectionCard = ({
 						<div className="avatar relative">
 							<div className="size-12 rounded-full bg-gradient-to-br from-success/20 to-success/10 overflow-hidden ring-2 ring-success/30">
 								<img
-									src={notification.recipient.profilePic}
-									alt={notification.recipient.fullName}
+									src={notification.recipient?.profilePic}
+									alt={notification.recipient?.fullName || "User Avatar"}
 									className="size-full object-cover"
 									onError={(e) => {
 										e.target.onerror = null;
@@ -38,7 +38,7 @@ const NewConnectionCard = ({
 						</div>
 						<div className="flex-1 min-w-0">
 							<h3 className="font-semibold text-base-content mb-1 truncate">
-								{notification.recipient.fullName}
+								{notification.recipient?.fullName || "Unknown User"}
 							</h3>
 							<p className="text-sm text-base-content/80 mb-2">
 								Accepted your friend request

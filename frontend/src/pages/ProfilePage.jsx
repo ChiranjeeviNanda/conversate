@@ -38,11 +38,15 @@ const ProfilePage = () => {
 	};
 
 	const handleRandomAvatar = () => {
-		const idx = Math.floor(Math.random() * 100) + 1;
-		const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
-		setFormState((prev) => ({ ...prev, profilePic: randomAvatar }));
-		toast.success("New avatar generated!");
-	};
+        const randomSeed = Math.random().toString(36).substring(7);
+        const colors = ["b6e3f4", "c0aede", "d1d4f9", "ffd5dc", "ffdfbf"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        const diceBearAvatar = `https://api.dicebear.com/9.x/lorelei/svg?seed=${randomSeed}&backgroundColor=${randomColor}`;
+        
+        setFormState((prev) => ({ ...prev, profilePic: diceBearAvatar }));
+        toast.success("New avatar generated!");
+    };
 
 	return (
 		<div className="min-h-screen pt-24 pb-36 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-base-100 via-base-200/30 to-base-100">

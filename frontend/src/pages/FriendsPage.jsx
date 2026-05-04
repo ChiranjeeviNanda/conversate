@@ -39,7 +39,7 @@ const FriendsPage = () => {
 				.includes(searchTerm.toLowerCase()) ||
 			friend.learningLanguage
 				.toLowerCase()
-				.includes(searchTerm.toLowerCase())
+				.includes(searchTerm.toLowerCase()),
 	);
 
 	// Calculate pagination
@@ -93,68 +93,70 @@ const FriendsPage = () => {
 				</AnimatedDiv>
 
 				{/* Search and Stats Section */}
-				<AnimatedDiv
-					delay={300}
-					direction="top"
-					isLoading={pageLoading}
-					className="space-y-6 max-w-7xl mx-auto"
-				>
-					<div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-						{/* Search Bar */}
-						<div className="flex flex-col w-full lg:max-w-lg transition-all duration-500 ease-out">
-							<div className="flex items-center gap-3">
-								<div className="relative flex-1 group">
-									<SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 size-5 text-base-content/50 z-10 transition-colors duration-300 group-focus-within:text-primary" />
-									<input
-										type="text"
-										placeholder="Search by name or language..."
-										className="w-full pl-12 pr-4 py-4 rounded-2xl border border-base-content/30 backdrop-blur-sm focus:outline-none focus:border-primary transition-all duration-300 shadow-lg hover:shadow-xl focus:shadow-2xl placeholder:text-base-content/50 text-base-content"
-										value={searchTerm}
-										onChange={(e) =>
-											setSearchTerm(e.target.value)
-										}
-									/>
-								</div>
-
-								{searchTerm && (
-									<div className="transition-all duration-300 ease-out">
-										<button
-											onClick={() => setSearchTerm("")}
-											className="cursor-pointer p-3 rounded-2xl border border-base-content/30 backdrop-blur-sm hover:border-error/50 hover:bg-error/10 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl group"
-										>
-											<XIcon className="size-5 text-base-content/50 group-hover:text-error transition-colors duration-300" />
-										</button>
+				{friends.length > 0 && (
+					<AnimatedDiv
+						delay={300}
+						direction="top"
+						isLoading={pageLoading}
+						className="space-y-6 max-w-7xl mx-auto"
+					>
+						<div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+							{/* Search Bar */}
+							<div className="flex flex-col w-full lg:max-w-lg transition-all duration-500 ease-out">
+								<div className="flex items-center gap-3">
+									<div className="relative flex-1 group">
+										<SearchIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 size-5 text-base-content/50 z-10 transition-colors duration-300 group-focus-within:text-primary" />
+										<input
+											type="text"
+											placeholder="Search by name or language..."
+											className="w-full pl-12 pr-4 py-4 rounded-2xl border border-base-content/30 backdrop-blur-sm focus:outline-none focus:border-primary transition-all duration-300 shadow-lg hover:shadow-xl focus:shadow-2xl placeholder:text-base-content/50 text-base-content"
+											value={searchTerm}
+											onChange={(e) =>
+												setSearchTerm(e.target.value)
+											}
+										/>
 									</div>
-								)}
-							</div>
 
-							<div
-								className={`mt-3 text-sm text-base-content/70 transition-all duration-300 ease-out ${
-									searchTerm
-										? "opacity-100 max-h-10 translate-y-0"
-										: "opacity-0 max-h-0 -translate-y-2"
-								}`}
-							>
-								<div className="flex items-center gap-2">
-									<div className="w-1 h-1 bg-primary rounded-full animate-pulse"></div>
-									<span>
-										<span className="font-semibold text-primary">
-											{filteredFriends.length}
-										</span>{" "}
-										{filteredFriends.length === 1
-											? "friend"
-											: "friends"}{" "}
-										matching{" "}
-										<span className="font-semibold text-secondary">
-											"{searchTerm}"
+									{searchTerm && (
+										<div className="transition-all duration-300 ease-out">
+											<button
+												onClick={() =>
+													setSearchTerm("")
+												}
+												className="cursor-pointer p-3 rounded-2xl border border-base-content/30 backdrop-blur-sm hover:border-error/50 hover:bg-error/10 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg hover:shadow-xl group"
+											>
+												<XIcon className="size-5 text-base-content/50 group-hover:text-error transition-colors duration-300" />
+											</button>
+										</div>
+									)}
+								</div>
+
+								<div
+									className={`mt-3 text-sm text-base-content/70 transition-all duration-300 ease-out ${
+										searchTerm
+											? "opacity-100 max-h-10 translate-y-0"
+											: "opacity-0 max-h-0 -translate-y-2"
+									}`}
+								>
+									<div className="flex items-center gap-2">
+										<div className="w-1 h-1 bg-primary rounded-full animate-pulse"></div>
+										<span>
+											<span className="font-semibold text-primary">
+												{filteredFriends.length}
+											</span>{" "}
+											{filteredFriends.length === 1
+												? "friend"
+												: "friends"}{" "}
+											matching{" "}
+											<span className="font-semibold text-secondary">
+												"{searchTerm}"
+											</span>
 										</span>
-									</span>
+									</div>
 								</div>
 							</div>
-						</div>
 
-						{/* Friend Stats */}
-						{friends.length > 0 && (
+							{/* Friend Stats */}
 							<AnimatedDiv
 								delay={400}
 								direction="right"
@@ -199,9 +201,9 @@ const FriendsPage = () => {
 									</GlassCard>
 								</div>
 							</AnimatedDiv>
-						)}
-					</div>
-				</AnimatedDiv>
+						</div>
+					</AnimatedDiv>
+				)}
 
 				{/* Friends Section */}
 				<section className="space-y-8">

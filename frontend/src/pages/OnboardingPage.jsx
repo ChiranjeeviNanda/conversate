@@ -43,9 +43,13 @@ const OnboardingPage = () => {
     };
 
     const handleRandomAvatar = () => {
-        const idx = Math.floor(Math.random() * 100) + 1;
-        const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
-        setFormState((prev) => ({ ...prev, profilePic: randomAvatar }));
+        const randomSeed = Math.random().toString(36).substring(7);
+        const colors = ["b6e3f4", "c0aede", "d1d4f9", "ffd5dc", "ffdfbf"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        
+        const diceBearAvatar = `https://api.dicebear.com/9.x/lorelei/svg?seed=${randomSeed}&backgroundColor=${randomColor}`;
+        
+        setFormState((prev) => ({ ...prev, profilePic: diceBearAvatar }));
         toast.success("New avatar generated!");
     };
 

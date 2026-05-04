@@ -29,14 +29,16 @@ export const signup = async (req, res) => {
 			});
 		}
 
-		const idx = Math.floor(Math.random() * 100) + 1; // Generate a number between 1-100
-		const randomAvatar = `https://avatar.iran.liara.run/public/${idx}.png`;
+		const randomSeed = Math.random().toString(36).substring(7);
+        const colors = ["b6e3f4", "c0aede", "d1d4f9", "ffd5dc", "ffdfbf"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+		const diceBearAvatar = `https://api.dicebear.com/9.x/lorelei/svg?seed=${randomSeed}&backgroundColor=${randomColor}`;
 
 		const newUser = await User.create({
 			email,
 			fullName,
 			password,
-			profilePic: randomAvatar,
+			profilePic: diceBearAvatar,
 		});
 
 		try {
